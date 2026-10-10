@@ -1,12 +1,25 @@
 public class Bank {
     private int balance;
+    public static int banyakAkun = 0;
+    private String nama;
   
-    public Bank (int balance) {
+    public Bank (String nama, int balance) {
         this.balance = balance;
+        this.nama = nama;
+        banyakAkun ++;
     }
     
+    public String getNama(){
+        return this.nama;
+    }
+
     public void deposit (int total) {
-        this.balance += total;
+        if (total > 0) {
+            this.balance += total;
+        } else {
+            System.out.println("Jumlah Deposit Tidak Valid");
+        }
+
     }
 
     public void withdraw (int total) {
